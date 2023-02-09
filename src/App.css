@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+@import url("./fonts/stylesheet.css");
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul[class],
+ol[class] {
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: #000000;
+    color: white;
+    font-family: MuseoSansCyrl-300;
+}
+*::selection {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+ul[class],
+ol[class] {
+    list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:not([class]) {
+    text-decoration-skip-ink: auto;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+article > * + * {
+    margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+#root {
+    min-height: 100%;
+}
+.element::-webkit-scrollbar {
+    width: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.main__wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
 }

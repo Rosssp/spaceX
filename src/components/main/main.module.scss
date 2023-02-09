@@ -1,0 +1,35 @@
+.main {
+    height: 658px;
+    position: relative;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    & h1 {
+        max-width: 448px;
+        font-size: 58px;
+        font-family: "MuseoSansCyrl-700" sans-serif;
+        line-height: 60%;
+        & span {
+            font-size: 24px;
+            font-family: "MuseoSansCyrl-300" sans-serif;
+            font-weight: lighter;
+            line-height: 100%;
+        }
+    }
+    &__side {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+}
+.background {
+    background-image: url("../../assets/bg.png");
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
