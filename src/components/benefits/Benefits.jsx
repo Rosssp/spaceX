@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./benefits.module.scss";
-// 184
 export default function Benefits() {
     const items = [
         { header: "мы", main: "1", footer: "на рынке" },
@@ -16,27 +15,27 @@ export default function Benefits() {
 
     const conRef = useRef(null);
     const outerRef = useRef(null);
-    const [coords, setCoords] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
+        const array = [];
+        array.push(conRef.current?.childNodes);
         const handleWindowMouseMove = (event) => {
-            let rect = outerRef.current.getBoundingClientRect();
-            setCoords({
-                x: event.clientX - rect.left,
-                y: event.clientY - rect.top,
+            array[0].forEach((col) => {
+                let rect = col.getBoundingClientRect();
+                let x = event.clientX - rect.left;
+                let y = event.clientY - rect.top;
+                col.style.setProperty("--mouse-x", `${x}px`);
+                col.style.setProperty("--mouse-y", `${y}px`);
             });
         };
-        conRef.current.addEventListener("mousemove", handleWindowMouseMove);
+        window.addEventListener("mousemove", handleWindowMouseMove);
     }, []);
-
-    console.log(coords);
 
     return (
         <>
-            <div className={styles.container} id="wrapper" ref={conRef}>
+            <div className={styles.container} ref={conRef}>
                 {items.map((item, index) => (
                     <div
-                        id="outer"
                         className={styles.container__item_outer}
                         ref={outerRef}
                         key={index}
