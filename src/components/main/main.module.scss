@@ -7,12 +7,23 @@
         align-items: center;
         height: 100%;
         width: 100%;
+        @media (max-width: 880px) {
+            padding-top: calc(658px - 50%);
+            flex-direction: column;
+            gap: 60px;
+        }
+    }
+    @media (max-width: 880px) {
+        // height: auto;
     }
     & h1 {
         max-width: 448px;
         font-size: 58px;
         font-family: "MuseoSansCyrl-700" sans-serif;
         line-height: 60%;
+        @media (max-width: 880px) {
+            text-align: center;
+        }
         & span {
             font-size: 24px;
             font-family: "MuseoSansCyrl-300" sans-serif;

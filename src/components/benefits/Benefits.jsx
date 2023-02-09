@@ -36,7 +36,7 @@ export default function Benefits() {
             <div className={styles.container} ref={conRef}>
                 {items.map((item, index) => (
                     <div
-                        className={styles.container__item_outer}
+                        className={styles.container__item__outer}
                         ref={outerRef}
                         key={index}
                     >
