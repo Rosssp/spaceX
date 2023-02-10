@@ -12,6 +12,7 @@
             rgb(74, 97, 173)
         )
         14;
+    z-index: 40;
     padding: 6px 16px;
     &::after {
         content: "";
@@ -37,5 +38,30 @@
     & p {
         text-align: center;
         font-size: 14px;
+        position: relative;
+    }
+}
+.outer {
+    &::after {
+        position: absolute;
+        content: "";
+        transform: translateY(-40px) translateX(69px);
+        height: 155%;
+        width: 150%;
+
+        background-image: url("../../../assets/buttonTail.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        mask-image: linear-gradient(to right, transparent 20%, black 100%);
+        @media (max-width: 1170px) {
+            transform: translateY(-40px) translateX(45px);
+            width: calc(
+                363px + (693.2 - 363) * ((100vw - 880px) / (1200 - 880))
+            );
+        }
+        @media (max-width: 880px) {
+            content: none;
+        }
     }
 }

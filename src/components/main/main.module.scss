@@ -8,35 +8,70 @@
         height: 100%;
         width: 100%;
         @media (max-width: 880px) {
-            padding-top: calc(658px - 50%);
+            justify-content: center;
             flex-direction: column;
             gap: 60px;
         }
     }
-    @media (max-width: 880px) {
-        // height: auto;
-    }
-    & h1 {
-        max-width: 448px;
-        font-size: 58px;
-        font-family: "MuseoSansCyrl-700" sans-serif;
-        line-height: 60%;
-        @media (max-width: 880px) {
-            text-align: center;
-        }
-        & span {
-            font-size: 24px;
-            font-family: "MuseoSansCyrl-300" sans-serif;
-            font-weight: lighter;
-            line-height: 100%;
-        }
-    }
+
     &__side {
         display: flex;
         flex-direction: column;
         gap: 80px;
+        @media (max-width: 880px) {
+            align-items: center;
+            gap: 20px;
+        }
     }
 }
+.title {
+    background: linear-gradient(90deg, #ffffff 20%, #fa4300 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    clip-path: polygon(50% 0%, 100% 0, 97% 22%, 91% 100%, 0 100%, 0% 60%, 0 0);
+    @media (max-width: 1170px) {
+        clip-path: none;
+    }
+    @media (max-width: 880px) {
+        background: none;
+        -webkit-text-fill-color: white;
+    }
+    & h1 {
+        max-width: 448px;
+        font-size: 58px;
+        font-family: "MuseoSansCyrl-500";
+        line-height: 80%;
+        @media (max-width: 880px) {
+            text-align: center;
+            font-size: 48px;
+        }
+        @media (max-width: 600px) {
+            text-align: center;
+            font-size: 36px;
+        }
+        & span {
+            font-size: 24px;
+            font-family: "MuseoSansCyrl-300";
+            font-weight: lighter;
+            @media (max-width: 880px) {
+                font-size: 18px;
+            }
+            @media (max-width: 600px) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.button {
+    position: relative;
+    &__tail {
+        top: 0px;
+        position: absolute;
+    }
+}
+
 .background {
     background-image: url("../../assets/bg.png");
     height: 100%;

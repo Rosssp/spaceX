@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./benefits.module.scss";
+
 export default function Benefits() {
     const items = [
         { header: "мы", main: "1", footer: "на рынке" },
@@ -13,8 +14,8 @@ export default function Benefits() {
         { header: "путешествие", main: "597", footer: "дней" },
     ];
 
-    const conRef = useRef(null);
     const outerRef = useRef(null);
+    const conRef = useRef(null);
 
     useEffect(() => {
         const array = [];
